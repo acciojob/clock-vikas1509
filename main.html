@@ -1,16 +1,35 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <title>Date Timer</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+  <p id="timer">Loading...</p>
 
+  <script>
+    // Function to update the timer
+    function updateTimer() {
+      const timerElement = document.getElementById('timer');
+      const now = new Date();
+
+      // Get the current date and time
+      const date = now.toDateString();
+      const time = now.toLocaleTimeString();
+
+      // Display the date and time in the 'timer' element
+      timerElement.textContent = `Date: ${date},${time}`;
+    }
+
+    // Initial call to update the timer
+    updateTimer();
+
+    // Set interval to update the timer every second
+    setInterval(updateTimer, 1000);
+  </script>
 </body>
-
 </html>
+
+
+
+
+
